@@ -3,7 +3,7 @@
 
 ![LambdaTest Logo](https://www.lambdatest.com/images/logo.svg)
 
-<img src = "https://webdriver.io/img/webdriverio.png" height = "100">
+<img src = "https://camo.githubusercontent.com/af4bf83ab2ca125346740f9961345a24ec43b3a9/68747470733a2f2f636c6475702e636f6d2f78465646784f696f41552e737667" height = "100">
 
 ## Environment Setup
 
