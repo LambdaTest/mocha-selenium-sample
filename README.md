@@ -145,7 +145,7 @@ describe("Google's Search Functionality for " + caps.browserName, function() {
 });
 
 ```
-Now that we have a first script ready. Let us specify the capabilituies to run the script on LambdaTest cloud-based Selenium Grid.
+Now we have a first script ready. Let us specify the capabilituies to run the script on LambdaTest cloud-based Selenium Grid.
 ```
 LT_USERNAME = process.env.LT_USERNAME || "<your username>";
 LT_ACCESS_KEY = process.env.LT_ACCESS_KEY || "<your accessKey>";
