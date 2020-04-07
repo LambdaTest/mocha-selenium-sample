@@ -15,7 +15,7 @@ $ brew install node
 ```
 $ npm init
 ```
-Install the mocha using npm 
+Install the Mocha using npm 
 ```
 $ npm install -g mocha 
 ```
@@ -25,7 +25,7 @@ $ npm install --save-dev mocha
 ```
 
 * **LambdaTest Credentials**
-   * Set LambdaTest username and access key in environment variables. It can be obtained from [LambdaTest dashboard](https://automation.lambdatest.com/)    
+   * Set LambdaTest username and access key in environment variables. It can be obtained from [LambdaTest Automation Dashboard](https://automation.lambdatest.com/)    
     example:
    - For linux/mac
     ```
@@ -78,9 +78,9 @@ mocha_selenium_sample
 }
 
 ```
-### Test Senerio
+### Test Scenario
 
-In our demonstration, we will be creating a script that uses the selenium web driver to make a search and open a website and assert whether the correct website is open. If assert returns true, it indicates that the test case passed successfully and will show up in the automation logs dashboard else if assert returns false, the test case fails, and the errors will be displayed in the automation logs.
+In our demonstration, we will be creating a script that uses the Selenium WebDriver to make a search and open a website and assert whether the correct website is open. If assert returns true, it indicates that the test case passed successfully and will show up in the automation logs dashboard else if assert returns false, the test case fails, and the errors will be displayed in the automation logs.
 
 * **Single Test**- On a single environment (Windows 10) and single browser (Chrome)
 
@@ -145,7 +145,7 @@ describe("Google's Search Functionality for " + caps.browserName, function() {
 });
 
 ```
-Now tat we have a first scvript ready. Let us specify the capabilituies to run the script on LambdaTest cloud-based Selenium Grid.
+Now that we have a first script ready. Let us specify the capabilituies to run the script on LambdaTest cloud-based Selenium Grid.
 ```
 LT_USERNAME = process.env.LT_USERNAME || "<your username>";
 LT_ACCESS_KEY = process.env.LT_ACCESS_KEY || "<your accessKey>";
@@ -164,7 +164,7 @@ exports.capabilities = {
 ```
 ## Parallel Testing for Mocha JavaScript
 
-Will use the same test script over different coinfigration to demonstarte parallel testing. Parallel testing with mocha will help you to run multiple test cases simultaneously.
+Will use the same test script over different configration to demonstarte parallel testing. Parallel testing with Mocha will help you to run multiple test cases simultaneously.
 
 * **Parallel Test**- Here is JavaScript file to run Mocha Testing on a parallel environment i.e. different operating system (Windows 10 and Mac OS Catalina) and different browsers (Chrome, Mozilla Firefox, and Safari).
 
