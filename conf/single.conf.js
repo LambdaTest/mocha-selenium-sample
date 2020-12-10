@@ -7,7 +7,7 @@ exports.capabilities = {
   'name': 'Your Test Name', // Test name
   'platform':'Windows 10', // OS name
   'browserName': 'chrome', // Browser name
-  'version': '73.0', // Browser version
+  'version': 'latest', // Browser version
   'visual': false,  // To take step by step screenshot
   'network':false,  // To capture network Logs
   'console':false, // To capture console logs.

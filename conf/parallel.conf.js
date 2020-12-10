@@ -12,7 +12,7 @@ var config = {
       name: "Your Test Name", // Test name
       platform: "Windows 10", // OS name
       browserName: "firefox",
-      version: "66.0",
+      version: "latest",
       visual: false, // To take step by step screenshot
       network: false, // To capture network Logs
       console: false // To capture console logs.
