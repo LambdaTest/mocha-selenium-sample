@@ -1,0 +1,1 @@
+{"version":"0.0.1","name":"mocha-selenium-sample","dependencies":{"bluebird":{"version":"3.7.2"},"mocha":{"version":"9.1.3"},"selenium-webdriver":{"version":"3.6.0"}}}
