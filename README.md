@@ -28,25 +28,32 @@ git clone https://github.com/LambdaTest/mocha-selenium-sample.git
 Step 2. Export the Lambda-test Credentials. You can get these from your automation dashboard.
 
 <p align="center">
-   <b>For Linux/macOS:</b>:
+   <b>For Linux/macOS:</b>
+
 ```
 export LT_USERNAME="YOUR_USERNAME"
 export LT_ACCESS_KEY="YOUR ACCESS KEY"
 ```
+
 <p align="center">
    <b>For Windows:</b>
+
 ```
 set LT_USERNAME="YOUR_USERNAME"
 set LT_ACCESS_KEY="YOUR ACCESS KEY"
 ```
+
 Step 3. Inside mocha-selenium-sample folder install necessary packages.
+
 ```
 cd mocha-selenium-sample
 npm i
 ```
+
 Step 4. To run your First Test.
+
 ```
-npm run single 
+npm run single
 ```
 
 ## See the Results
