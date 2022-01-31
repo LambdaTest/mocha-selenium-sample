@@ -44,7 +44,7 @@ describe("Google's Search Functionality for " + caps.browserName, function() {
   });
 
   afterEach(function(done) {
-    if (this.currentTest.isPassed) {
+    if (this.currentTest.isPassed()) {
       driver.executeScript("lambda-status=passed");
     } else {
       driver.executeScript("lambda-status=failed");
