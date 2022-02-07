@@ -19,7 +19,7 @@ var buildDriver = function(caps) {
 
 capabilities.forEach(function(caps) {
  
-  describe("Google's Search Functionality for " + caps.browserName, function() {
+  describe("Mocha Todo Test " + caps.browserName, function() {
     var driver;
     this.timeout(0);
 
@@ -30,17 +30,19 @@ capabilities.forEach(function(caps) {
     });
 
     it("can find search results" + caps.browserName, function(done) {
-      driver.get("https://www.lambdatest.com").then(function() {
-        driver.getTitle().then(function(title) {
-          setTimeout(function() {
-            console.log(title);
-            assert(
-              title.match(
-                "Cross Browser Testing Tools | Test Your Website on Different Browsers | LambdaTest"
-              ) != null
-            );
-            done();
-          }, 10000);
+      driver.get("https://lambdatest.github.io/sample-todo-app/").then(function() {
+          driver.findElement(webdriver.By.name('li1')).click().then(function(){
+            console.log("Successfully clicked first list item.");
+        });
+
+        driver.findElement(webdriver.By.name('li2')).click().then(function(){
+            console.log("Successfully clicked second list item.");
+          });
+
+        driver.findElement(webdriver.By.id('sampletodotext')).sendKeys('Complete Lambdatest Tutorial\n').then(function(){
+            driver.findElement(webdriver.By.id('addbutton')).click().then(function(){
+                console.log("Successfully added a new task.");
+            })
         });
       });
     });
