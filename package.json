@@ -5,6 +5,7 @@
   "scripts": {
     "test": "npm run single && npm run parallel",
     "single": "cross-env CONFIG_FILE=single ./node_modules/.bin/mocha specs/single_test.js conf/single.conf.js",
+    "singleSmartUI": "cross-env CONFIG_FILE=singleSmartUI ./node_modules/.bin/mocha specs/single_smartui_test.js conf/singleSmartUI.conf.js",
     "parallel": "cross-env CONFIG_FILE=parallel ./node_modules/.bin/mocha specs/parallel_test.js conf/parallel.conf.js --timeout=100000"
   },
   "keywords": [
