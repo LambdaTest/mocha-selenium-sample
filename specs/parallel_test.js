@@ -18,44 +18,36 @@ var buildDriver = function(caps) {
 };
 
 capabilities.forEach(function(caps) {
- 
   describe("Mocha Todo Test " + caps.browserName, function() {
     var driver;
     this.timeout(0);
 
-    beforeEach(function(done) {
+    beforeEach(async function() {
       caps.name = this.currentTest.title;
       driver = buildDriver(caps);
-      done();
     });
 
-    it("can find search results" + caps.browserName, function(done) {
-      driver.get("https://lambdatest.github.io/sample-todo-app/").then(function() {
-          driver.findElement(webdriver.By.name('li1')).click().then(function(){
-            console.log("Successfully clicked first list item.");
-        });
+    it("can find search results " + caps.browserName, async function() {
+      await driver.get("https://lambdatest.github.io/sample-todo-app/");
 
-        driver.findElement(webdriver.By.name('li2')).click().then(function(){
-            console.log("Successfully clicked second list item.");
-          });
+      await driver.findElement(webdriver.By.name('li1')).click();
+      console.log("Successfully clicked first list item.");
 
-        driver.findElement(webdriver.By.id('sampletodotext')).sendKeys('Complete Lambdatest Tutorial\n').then(function(){
-            driver.findElement(webdriver.By.id('addbutton')).click().then(function(){
-                console.log("Successfully added a new task.");
-            })
-        });
-      });
+      await driver.findElement(webdriver.By.name('li2')).click();
+      console.log("Successfully clicked second list item.");
+
+      await driver.findElement(webdriver.By.id('sampletodotext')).sendKeys('Complete Lambdatest Tutorial\n');
+      await driver.findElement(webdriver.By.id('addbutton')).click();
+      console.log("Successfully added a new task.");
     });
 
-    afterEach(function(done) {
-      if (this.currentTest.isPassed()) {
-        driver.executeScript("lambda-status=passed");
+    afterEach(async function() {
+      if (this.currentTest.state === 'passed') {
+        await driver.executeScript("lambda-status=passed");
       } else {
-        driver.executeScript("lambda-status=failed");
+        await driver.executeScript("lambda-status=failed");
       }
-      driver.quit().then(function() {
-        done();
-      });
+      await driver.quit();
     });
   });
 });
