@@ -21,32 +21,27 @@ describe("Mocha Todo Test " + caps.browserName, function () {
     var driver;
     this.timeout(0);
 
-    beforeEach(function (done) {
+    beforeEach(function () {
         caps.name = this.currentTest.title;
         driver = buildDriver(caps);
-        done();
     });
 
-    it("can find search results", function (done) {
-        driver.get("https://lambdatest.github.io/sample-todo-app/").then(function () {
-            driver.findElement(webdriver.By.name('li1')).click().then(function () {
-                console.log("Successfully clicked first list item.");
-            });
+    it("can find search results", async function () {
+        await driver.get("https://lambdatest.github.io/sample-todo-app/");
 
-            driver.findElement(webdriver.By.name('li2')).click().then(function () {
-                console.log("Successfully clicked second list item.");
-            });
+        await driver.findElement(webdriver.By.name('li1')).click();
+        console.log("Successfully clicked first list item.");
 
-            driver.findElement(webdriver.By.id('sampletodotext')).sendKeys('Complete Lambdatest Tutorial\n').then(function () {
-                driver.findElement(webdriver.By.id('addbutton')).click().then(function () {
-                    console.log("Successfully added a new task.");
-                })
-            });
+        await driver.findElement(webdriver.By.name('li2')).click();
+        console.log("Successfully clicked second list item.");
 
-            // Hook to take SmartUI snapshot
-            driver.executeScript(`smartui.takeScreenshot=mocha-selenium`);
+        await driver.findElement(webdriver.By.id('sampletodotext')).sendKeys('Complete Lambdatest Tutorial\n');
+        await driver.findElement(webdriver.By.id('addbutton')).click();
+        console.log("Successfully added a new task.");
 
-            driver.quit();
-        });
+        // Hook to take SmartUI snapshot
+        await driver.executeScript(`smartui.takeScreenshot=mocha-selenium`);
+
+        await driver.quit();
     });
 });
