@@ -27,7 +27,7 @@ describe("Mocha Todo Test " + caps.browserName, function () {
     });
 
     it("can find search results", async function () {
-        await driver.get("https://lambdatest.github.io/sample-todo-app/");
+        await driver.get("https://www.testmuai.com/selenium-playground/todo-app/");
 
         await driver.findElement(webdriver.By.name('li1')).click();
         console.log("Successfully clicked first list item.");
